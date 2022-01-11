@@ -22,6 +22,7 @@ router.get("/", async (req, res, next) => {
 router.get("/create", async (req, res, next) => {
   const artists = await ArtistModel.find();
   const labels = await LabelModel.find();
+  console.log("artist :", artists, "labels :", labels);
   res.render("dashboard/albumCreate", { artists, labels });
 });
 

@@ -1,0 +1,32 @@
+<form method="post" action="/dashboard/album/{{album._id}}" class="form" enctype="multipart/form-data">
+    <h1 class="title">album update</h1>
+    <label for="title" class="label">title</label>
+    <input class="input" type="text" id="title" name="title" value="{{album.title}}">
+
+    <label for="select-artist">artist</label>
+    <select id="select-artist" name="artist" class="input">
+        {{#each artists}}
+         <option value="{{_id}}">{{name}}</option>
+         {{!-- YOUR CODE HERE --}}
+        {{/each}}
+    </select>
+
+    <label for="select-label">label</label>
+    <select id="select-label" name="label" class="input">
+        {{#each labels}}
+            <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+    <label for="releaseDate" class="label">release date</label>
+    <input class="input" type="date" id="releaseDate" name="releaseDate" value="19/01/2022">
+
+    <label for="cover" class="label">
+        choose a cover
+        <i class="icon fas fa-cloud-upload-alt fa-2x"></i>
+    </label>
+    <input class="is-hidden" type="file" id="cover"  name="cover"> 
+
+
+    <button class="btn">update</button>
+</form>
